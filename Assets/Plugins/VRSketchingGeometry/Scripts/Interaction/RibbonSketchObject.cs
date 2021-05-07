@@ -78,7 +78,7 @@ namespace VRSketchingGeometry.SketchObjectManagement{
         /// </summary>
         /// <param name="point"></param>
         /// <param name="rotation"></param>
-        internal void AddControlPoint(Vector3 point, Quaternion rotation) {
+        public void AddControlPoint(Vector3 point, Quaternion rotation) {
             Vector3 transformedPoint = this.transform.InverseTransformPoint(point);
             Quaternion transformedRotation = Quaternion.Inverse(this.transform.rotation) * rotation;
             Points.Add(transformedPoint);

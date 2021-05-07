@@ -74,7 +74,7 @@ namespace VRSketchingGeometry.SketchObjectManagement
         /// Adds a control point to the end of the spline.
         /// </summary>
         /// <param name="point"></param>
-        internal void AddControlPoint(Vector3 point)
+        public void AddControlPoint(Vector3 point)
         {
             //Transform the new control point from world to local space of sketch object
             Vector3 transformedPoint = transform.InverseTransformPoint(point);
@@ -351,7 +351,7 @@ namespace VRSketchingGeometry.SketchObjectManagement
         /// <param name="lineDiameter"></param>
         /// <returns></returns>
         protected virtual SplineMesh MakeSplineMesh(int interpolationSteps, Vector3 lineDiameter) {
-            return new SplineMesh(new KochanekBartelsSpline(interpolationSteps), lineDiameter);
+            return new SplineMesh(new KochanekBartelsSpline(interpolationSteps), lineDiameter, 6); // CODE CHANGE for SketchBasedInteractionScene (set vertices)
         }
 
         public Brush GetBrush() {
@@ -359,12 +359,14 @@ namespace VRSketchingGeometry.SketchObjectManagement
             brush.SketchMaterial = new SketchMaterialData(meshRenderer.sharedMaterial);
             brush.CrossSectionScale = this.lineDiameter;
             brush.InterpolationSteps = this.InterpolationSteps;
+
             SplineMesh.GetCrossSectionShape(out brush.CrossSectionVertices, out brush.CrossSectionNormals);
             return brush;
         }
 
         public void SetBrush(Brush brush) {
             this.SetMaterial(Defaults.GetMaterialFromDictionary(brush.SketchMaterial));
+
             if (brush is LineBrush lineBrush)
             {
                 this.SetInterpolationSteps(lineBrush.InterpolationSteps);
