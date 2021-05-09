@@ -26,10 +26,14 @@ public class VRDrawLines : MonoBehaviour
     public DefaultReferences Defaults;
     public SketchWorld SketchWorld;
 
+    public GameObject Commander;
+
     public LineSketchObject currentLineSketchObject;
     public List<LineSketchObject> listOfLineSketchObjects = new List<LineSketchObject>();
     public float lineSketchObjectDiameter = 0.05f;
     public Color lineSketchObjectColor = Color.black;
+
+    public GameObject ToolManager;
 
     void Start()
     {
@@ -39,7 +43,7 @@ public class VRDrawLines : MonoBehaviour
         // Create a SketchWorld, many commands require a SketchWorld to be present
         SketchWorld = Instantiate(Defaults.SketchWorldPrefab).GetComponent<SketchWorld>();
 
-        Invoker = new CommandInvoker();
+        //Invoker = new CommandInvoker();
 
     }
 
@@ -87,9 +91,11 @@ public class VRDrawLines : MonoBehaviour
         listOfLineSketchObjects.Add(currentLineSketchObject);
 
         // Set material color
+        SetLineSketchObjectColor();
         currentLineSketchObject.GetComponent<Renderer>().material.SetColor("_Color", lineSketchObjectColor);
 
         // Set diameter
+        SetLineSketchObjectDiameter();
         currentLineSketchObject.SetLineDiameter(lineSketchObjectDiameter);
 
         // Set first point of line
@@ -99,7 +105,7 @@ public class VRDrawLines : MonoBehaviour
 
     void EndDrawLine()
     {
-        Invoker.ExecuteCommand(new AddObjectToSketchWorldRootCommand(currentLineSketchObject, SketchWorld));
+        Commander.GetComponent<SketchBasedCommands>().Invoker.ExecuteCommand(new AddObjectToSketchWorldRootCommand(currentLineSketchObject, SketchWorld));
         isMoving = false;
     }
 
@@ -115,13 +121,14 @@ public class VRDrawLines : MonoBehaviour
         }
     }
 
-    public void SetLineSketchObjectDiameter(float diameter)
+    public void SetLineSketchObjectDiameter()
     {
-        lineSketchObjectDiameter = diameter;
+        lineSketchObjectDiameter = ToolManager.GetComponent<VRSketchingToolManager>().scale;
     }
 
-    public void SetLineSketchObjectColor(Color color)
+    public void SetLineSketchObjectColor()
     {
-        lineSketchObjectColor = color;
+        lineSketchObjectColor = ToolManager.GetComponent<VRSketchingToolManager>().color;
     }
+
 }

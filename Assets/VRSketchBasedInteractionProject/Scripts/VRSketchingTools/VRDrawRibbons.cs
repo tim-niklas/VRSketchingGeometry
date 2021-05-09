@@ -26,10 +26,15 @@ public class VRDrawRibbons : MonoBehaviour
     public DefaultReferences Defaults;
     public SketchWorld SketchWorld;
 
+    public GameObject Commander;
+
     public RibbonSketchObject currentRibbonSketchObject;
     public List<RibbonSketchObject> listOfRibbonSketchObjects = new List<RibbonSketchObject>();
-    public float ribbonSketchObjectWidth = 0.05f;
+    public float ribbonSketchObjectScale = 0.05f;
     public Color ribbonSketchObjectColor = Color.black;
+
+    public GameObject ToolManagerRibbon;
+
 
     void Start()
     {
@@ -39,7 +44,7 @@ public class VRDrawRibbons : MonoBehaviour
         // Create a SketchWorld, many commands require a SketchWorld to be present
         SketchWorld = Instantiate(Defaults.SketchWorldPrefab).GetComponent<SketchWorld>();
 
-        Invoker = new CommandInvoker();
+        // Invoker = new CommandInvoker();
     }
 
     public void TriggerDown(SteamVR_Action_Boolean fromAction, SteamVR_Input_Sources fromSource)
@@ -86,10 +91,12 @@ public class VRDrawRibbons : MonoBehaviour
         listOfRibbonSketchObjects.Add(currentRibbonSketchObject);
 
         // Set material color
+        //SetRibbonSketchObjectColor();
         currentRibbonSketchObject.GetComponent<Renderer>().material.SetColor("_Color", ribbonSketchObjectColor);
 
         // Set width
-        currentRibbonSketchObject.SetRibbonScale(Vector3.one * ribbonSketchObjectWidth);
+        //SetRibbonSketchObjectScale();
+        currentRibbonSketchObject.SetRibbonScale(Vector3.one * ribbonSketchObjectScale);
 
         // Set first point of ribbon
         // Invoker.ExecuteCommand(new AddPointAndRotationCommand(currentRibbonSketchObject, movementSource.position, movementSource.rotation));
@@ -99,6 +106,7 @@ public class VRDrawRibbons : MonoBehaviour
 
     void EndDrawRibbon()
     {
+        Commander.GetComponent<SketchBasedCommands>().Invoker.ExecuteCommand(new AddObjectToSketchWorldRootCommand(currentRibbonSketchObject, SketchWorld));
         isMoving = false;
     }
 
@@ -114,14 +122,14 @@ public class VRDrawRibbons : MonoBehaviour
         }
     }
 
-    public void SetRibbonSketchObjectWidth(float width)
+    public void SetRibbonSketchObjectScale()
     {
-        ribbonSketchObjectWidth = width;
+        ribbonSketchObjectScale = ToolManagerRibbon.GetComponent<VRSketchingToolManager>().scale;
     }
 
-    public void SetLineSketchObjectColor(Color color)
+    public void SetRibbonSketchObjectColor()
     {
-        ribbonSketchObjectColor = color;
+        ribbonSketchObjectColor = ToolManagerRibbon.GetComponent<VRSketchingToolManager>().color;
     }
 }
 
