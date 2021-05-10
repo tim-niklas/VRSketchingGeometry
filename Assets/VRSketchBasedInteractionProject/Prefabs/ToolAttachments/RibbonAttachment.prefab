@@ -168,8 +168,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4744340840553474929}
   m_Layer: 0
-  m_Name: RibbonTip
-  m_TagString: Untagged
+  m_Name: RibbonAttachment
+  m_TagString: VRDrawRibbonsAttachment
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

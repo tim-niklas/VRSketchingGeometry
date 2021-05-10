@@ -168,8 +168,8 @@ GameObject:
   m_Component:
   - component: {fileID: 3254416979914762995}
   m_Layer: 0
-  m_Name: LineTip
-  m_TagString: Untagged
+  m_Name: LineAttachment
+  m_TagString: VRDrawLinesAttachment
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

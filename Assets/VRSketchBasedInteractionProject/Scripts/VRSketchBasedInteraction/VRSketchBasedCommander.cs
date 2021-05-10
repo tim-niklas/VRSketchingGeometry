@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using VRSketchingGeometry.Commands;
 
-public class SketchBasedCommands : MonoBehaviour
+public class VRSketchBasedCommander: MonoBehaviour
 {
     public CommandInvoker Invoker;
 

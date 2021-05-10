@@ -3,7 +3,14 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - VRToolTip
+  - VRDrawLinesAttachment
+  - VRDrawRibbonsAttachment
+  - VRRecognizerAttachment
+  - VRDrawLinesTool
+  - VRDrawRibbonsTool
+  - VRToolAttachments
   layers:
   - Default
   - TransparentFX

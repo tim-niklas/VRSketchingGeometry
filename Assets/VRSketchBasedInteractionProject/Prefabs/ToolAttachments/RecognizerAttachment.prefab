@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 898119517428053464}
   m_Layer: 0
-  m_Name: RecognizerTip
-  m_TagString: Untagged
+  m_Name: RecognizerAttachment
+  m_TagString: VRRecognizerAttachment
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

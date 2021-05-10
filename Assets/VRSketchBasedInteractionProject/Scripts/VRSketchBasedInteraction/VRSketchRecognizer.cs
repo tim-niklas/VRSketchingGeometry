@@ -7,7 +7,7 @@ using PDollarGestureRecognizer;
 using System.IO;
 using UnityEngine.Events;
 
-public class SketchRecognizer : MonoBehaviour
+public class VRSketchRecognizer : MonoBehaviour
 {
     // Controller settings
     public SteamVR_Input_Sources handType;
@@ -19,12 +19,14 @@ public class SketchRecognizer : MonoBehaviour
     private bool isMoving = false; // If controller is moving
 
     // Draw settings
-    LineRenderer lineRenderer; // lineRenderer draw lines accrding to the given positions
     public GameObject debugPrefab; // Debug prefab model 
+    LineRenderer lineRenderer; // lineRenderer draw lines accrding to the given positions
+    public Gradient lineRendererGradientNeutral;
+    public Gradient lineRendererGradientFalse;
 
     // Recogntion settings
     public float newPositionTresholdDistance = 0.025f; // Min distance between the last and new points
-    public float recognitionTreshold = 0.5f; // Min value of the recogntion result score
+    public float recognitionTreshold = 0.80f; // Min value of the recogntion result score
 
     private List<Gesture> trainingSet = new List<Gesture>(); // Training set of gestures
     private List<Vector3> positionsList = new List<Vector3>(); // List of positions of the sketch
@@ -96,6 +98,7 @@ public class SketchRecognizer : MonoBehaviour
         lineRenderer.positionCount = 0;
         lineRenderer.positionCount++;
         lineRenderer.SetPosition(0, movementSource.position);
+        lineRenderer.colorGradient = lineRendererGradientNeutral;
 
         // if (debugPrefab)
         //     Destroy(Instantiate(debugPrefab, movementSource.position, Quaternion.identity), 3);
@@ -140,10 +143,14 @@ public class SketchRecognizer : MonoBehaviour
             if (result.Score > recognitionTreshold)
             {
                 OnRecognized.Invoke(result.GestureClass, result.Score);
+
+                lineRenderer.positionCount = 0;
+            }
+            else
+            {
+                StartCoroutine(FalseRecognized());
             }
         }
-
-        lineRenderer.positionCount = 0;
     }
 
     void UpdateMovement()
@@ -160,5 +167,12 @@ public class SketchRecognizer : MonoBehaviour
             //  if (debugPrefab)
             //      Destroy(Instantiate(debugPrefab, movementSource.position, Quaternion.identity), 3);
         }
+    }
+
+    private IEnumerator FalseRecognized()
+    {
+        lineRenderer.colorGradient = lineRendererGradientFalse;
+        yield return new WaitForSeconds(0.5f);
+        lineRenderer.positionCount = 0;
     }
 }

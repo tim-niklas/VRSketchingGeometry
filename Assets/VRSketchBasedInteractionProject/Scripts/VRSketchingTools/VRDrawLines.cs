@@ -22,29 +22,19 @@ public class VRDrawLines : MonoBehaviour
     public float newPositionTresholdDistance = 0.025f; // Min distance between the last and new points
 
     // VRSketchGeometry Framework
-    private CommandInvoker Invoker;
     public DefaultReferences Defaults;
-    public SketchWorld SketchWorld;
-
-    public GameObject Commander;
-
-    public LineSketchObject currentLineSketchObject;
+    private LineSketchObject currentLineSketchObject;
     public List<LineSketchObject> listOfLineSketchObjects = new List<LineSketchObject>();
-    public float lineSketchObjectDiameter = 0.05f;
-    public Color lineSketchObjectColor = Color.black;
+    private float lineSketchObjectDiameter = 0.05f;
+    private Color lineSketchObjectColor = Color.black;
 
-    public GameObject ToolManager;
+    public VRSketchingToolManager ToolManager;
+    public VRSketchBasedCommander Commander;
 
     void Start()
     {
         actionDrawLines.AddOnStateDownListener(TriggerDown, handType);
         actionDrawLines.AddOnStateUpListener(TríggerUp, handType);
-
-        // Create a SketchWorld, many commands require a SketchWorld to be present
-        SketchWorld = Instantiate(Defaults.SketchWorldPrefab).GetComponent<SketchWorld>();
-
-        //Invoker = new CommandInvoker();
-
     }
 
     public void TriggerDown(SteamVR_Action_Boolean fromAction, SteamVR_Input_Sources fromSource)
@@ -99,13 +89,12 @@ public class VRDrawLines : MonoBehaviour
         currentLineSketchObject.SetLineDiameter(lineSketchObjectDiameter);
 
         // Set first point of line
-        // Invoker.ExecuteCommand(new AddControlPointCommand(currentLineSketchObject, movementSource.position));
         currentLineSketchObject.AddControlPoint(movementSource.position);
     }
 
     void EndDrawLine()
     {
-        Commander.GetComponent<SketchBasedCommands>().Invoker.ExecuteCommand(new AddObjectToSketchWorldRootCommand(currentLineSketchObject, SketchWorld));
+        Commander.Invoker.ExecuteCommand(new AddObjectToSketchWorldRootCommand(currentLineSketchObject, ToolManager.SketchWorld));
         isMoving = false;
     }
 
@@ -123,12 +112,12 @@ public class VRDrawLines : MonoBehaviour
 
     public void SetLineSketchObjectDiameter()
     {
-        lineSketchObjectDiameter = ToolManager.GetComponent<VRSketchingToolManager>().scale;
+        lineSketchObjectDiameter = ToolManager.GetScale();
     }
 
     public void SetLineSketchObjectColor()
     {
-        lineSketchObjectColor = ToolManager.GetComponent<VRSketchingToolManager>().color;
+        lineSketchObjectColor = ToolManager.GetColor();
     }
 
 }
