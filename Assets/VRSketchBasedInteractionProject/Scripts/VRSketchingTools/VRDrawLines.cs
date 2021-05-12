@@ -12,12 +12,12 @@ public class VRDrawLines : MonoBehaviour
 {
     // Controller settings
     public SteamVR_Input_Sources handType; // Left or right hand
-    public SteamVR_Action_Boolean actionDrawLines; // Action set (set controller button)
-
+    public SteamVR_Action_Boolean actionDrawLines; // Action set (select key input of controller)
     public Transform movementSource; // Left or right hand transform
     private bool isPressed = false; // If controller key is pressed
-    private bool isMoving = false; // If controller is movin
+    private bool isMoving = false; // If controller is moving
 
+    // Point positions
     private List<Vector3> positionsList = new List<Vector3>(); // List of positions of the sketch
     public float newPositionTresholdDistance = 0.025f; // Min distance between the last and new points
 
@@ -28,15 +28,18 @@ public class VRDrawLines : MonoBehaviour
     private float lineSketchObjectDiameter = 0.05f;
     private Color lineSketchObjectColor = Color.black;
 
-    public VRSketchingToolManager ToolManager;
-    public VRSketchBasedCommander Commander;
+
+    public VRSketchingToolManager ToolManager; // ToolManager (getting scale and color)
+    public VRSketchBasedCommander Commander; // Commander (access CommandInvoker)
 
     void Start()
     {
+        // Set controller input listener
         actionDrawLines.AddOnStateDownListener(TriggerDown, handType);
         actionDrawLines.AddOnStateUpListener(TríggerUp, handType);
     }
 
+    // If controller trigger button is pressed
     public void TriggerDown(SteamVR_Action_Boolean fromAction, SteamVR_Input_Sources fromSource)
     {
         isPressed = true;
@@ -73,6 +76,7 @@ public class VRDrawLines : MonoBehaviour
     {
         isMoving = true;
 
+        // Set list of position points
         positionsList.Clear();
         positionsList.Add(movementSource.position);
 
@@ -94,7 +98,8 @@ public class VRDrawLines : MonoBehaviour
 
     void EndDrawLine()
     {
-        Commander.Invoker.ExecuteCommand(new AddObjectToSketchWorldRootCommand(currentLineSketchObject, ToolManager.SketchWorld));
+
+        Commander.Invoker.ExecuteCommand(new AddObjectToSketchWorldRootCommand(currentLineSketchObject, ToolManager.SketchWorld)); // Add lineSketchObject to SketchWorld
         isMoving = false;
     }
 

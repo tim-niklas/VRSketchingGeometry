@@ -12,12 +12,12 @@ public class VRDrawRibbons : MonoBehaviour
 {
     // Controller settings
     public SteamVR_Input_Sources handType; // Left or right hand
-    public SteamVR_Action_Boolean actionDrawRibbons; // Action set (set controller button))
-
+    public SteamVR_Action_Boolean actionDrawRibbons; // Action set (select key input of controller)
     public Transform movementSource; // Left or right hand transform
     private bool isPressed = false; // If controller key is pressed
     private bool isMoving = false; // If controller is movin
 
+    // Point positions
     private List<Vector3> positionsList = new List<Vector3>(); // List of positions of the sketch
     public float newPositionTresholdDistance = 0.025f; // Min distance between the last and new points
 
@@ -28,15 +28,17 @@ public class VRDrawRibbons : MonoBehaviour
     private float ribbonSketchObjectScale = 0.05f;
     private Color ribbonSketchObjectColor = Color.black;
 
-    public VRSketchingToolManager ToolManager;
-    public VRSketchBasedCommander Commander;
+    public VRSketchingToolManager ToolManager; // ToolManager (getting scale and color)
+    public VRSketchBasedCommander Commander; // Commander (access CommandInvoker)
 
     void Start()
     {
+        // Set controller input listener
         actionDrawRibbons.AddOnStateDownListener(TriggerDown, handType);
         actionDrawRibbons.AddOnStateUpListener(TríggerUp, handType);
     }
 
+    // If controller trigger button is pressed
     public void TriggerDown(SteamVR_Action_Boolean fromAction, SteamVR_Input_Sources fromSource)
     {
         isPressed = true;
@@ -73,6 +75,7 @@ public class VRDrawRibbons : MonoBehaviour
     {
         isMoving = true;
 
+        // Set list of position points
         positionsList.Clear();
         positionsList.Add(movementSource.position);
 
@@ -96,7 +99,7 @@ public class VRDrawRibbons : MonoBehaviour
 
     void EndDrawRibbon()
     {
-        Commander.Invoker.ExecuteCommand(new AddObjectToSketchWorldRootCommand(currentRibbonSketchObject, ToolManager.SketchWorld));
+        Commander.Invoker.ExecuteCommand(new AddObjectToSketchWorldRootCommand(currentRibbonSketchObject, ToolManager.SketchWorld));  // Add ribbonSketchObject to SketchWorld
         isMoving = false;
     }
 

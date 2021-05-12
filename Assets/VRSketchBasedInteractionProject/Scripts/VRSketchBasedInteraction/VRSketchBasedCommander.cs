@@ -3,16 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using VRSketchingGeometry.Commands;
 
-public class VRSketchBasedCommander: MonoBehaviour
+public class VRSketchBasedCommander : MonoBehaviour
 {
-    public CommandInvoker Invoker;
+    public CommandInvoker Invoker; // CommandeInkover responsbile for the whole scene
 
     public void Start()
     {
-        Invoker = new CommandInvoker();
+        Invoker = new CommandInvoker(); // Initialize CommandInvoker
     }
 
-    // Call the specific command according to the recognized sketch (gesture)
+    // Call the specific command according to the recognized gesture (sketch)
     public void CallCommand(string sketchName, float score)
     {
         switch (sketchName)

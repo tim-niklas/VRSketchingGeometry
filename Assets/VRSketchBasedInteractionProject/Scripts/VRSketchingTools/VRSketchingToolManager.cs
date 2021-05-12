@@ -6,10 +6,10 @@ using VRSketchingGeometry.SketchObjectManagement;
 
 public class VRSketchingToolManager : MonoBehaviour
 {
-    public Color VRSketchingToolColor = Color.black;
-    public float VRSketchingToolScale = 0.05f;
+    public Color VRSketchingToolColor = Color.black; // color of all sketch tools
+    public float VRSketchingToolScale = 0.05f; // Scale of all sketch tools
 
-    public SketchWorld SketchWorld;
+    public SketchWorld SketchWorld; // SketchWorld of scene
     public DefaultReferences Defaults;
 
     public GameObject[] VRSketchingTools;
