@@ -10,6 +10,9 @@ TagManager:
   - VRDrawLinesTool
   - VRDrawRibbonsTool
   - VRToolAttachments
+  - VRDrawRibbonsAttachmentModel
+  - VRDrawLinesAttachmentModel
+  - VRRecognizerAttachmentModel
   layers:
   - Default
   - TransparentFX

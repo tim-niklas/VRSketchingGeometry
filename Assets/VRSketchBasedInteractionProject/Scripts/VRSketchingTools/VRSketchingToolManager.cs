@@ -49,21 +49,37 @@ public class VRSketchingToolManager : MonoBehaviour
         SetToolActiveOrInactive(true, "VRDrawRibbonsTool", "VRDrawRibbonsAttachment");
     }
 
-    public void SetScaleAndColorOfToolAttachment(string VRAttachmentTag)
+    public void SetColorOfToolAttachment(string VRAttachmentTag)
     {
         VRSketchingTools = GameObject.FindGameObjectsWithTag(VRAttachmentTag);
 
         foreach (GameObject VRSketchingTool in VRSketchingTools)
         {
-            VRSketchingTool.transform.localScale = new Vector3(VRSketchingToolScale, VRSketchingToolScale, VRSketchingToolScale);
             VRSketchingTool.GetComponent<Renderer>().material.SetColor("_Color", VRSketchingToolColor);
         }
     }
 
+    public void SetScaleOfToolAttachment(string VRAttachmentModelTag)
+    {
+        VRSketchingTools = GameObject.FindGameObjectsWithTag(VRAttachmentModelTag);
+
+        foreach (GameObject VRSketchingTool in VRSketchingTools)
+        {
+            VRSketchingTool.transform.localScale = new Vector3(VRSketchingToolScale, VRSketchingToolScale, VRSketchingToolScale);
+        }
+    }
+
+    public void SetScaleAndColorOfToolAttachment(string VRAttachmentTag, string VRAttachmentModelTag)
+    {
+        SetScaleOfToolAttachment(VRAttachmentTag);
+        SetColorOfToolAttachment(VRAttachmentModelTag);
+
+    }
+
     public void SetAllToolsAttachmentApperances()
     {
-        SetScaleAndColorOfToolAttachment("VRDrawLinesAttachment");
-        SetScaleAndColorOfToolAttachment("VRDrawRibbonsAttachment");
+        SetScaleAndColorOfToolAttachment("VRDrawLinesAttachment", "VRDrawLinesAttachmentModel");
+        SetScaleAndColorOfToolAttachment("VRDrawRibbonsAttachment", "VRDrawRibbonsAttachmentModel");
     }
 
     public void SetColor(Color color)

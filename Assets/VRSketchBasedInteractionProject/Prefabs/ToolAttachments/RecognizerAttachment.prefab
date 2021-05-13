@@ -45,7 +45,7 @@ GameObject:
   - component: {fileID: 8019357566830505002}
   m_Layer: 0
   m_Name: 'Cube '
-  m_TagString: Untagged
+  m_TagString: VRRecognizerAttachmentModel
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -124,7 +124,7 @@ GameObject:
   - component: {fileID: 810258655184450799}
   m_Layer: 0
   m_Name: Cube
-  m_TagString: Untagged
+  m_TagString: VRRecognizerAttachmentModel
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
