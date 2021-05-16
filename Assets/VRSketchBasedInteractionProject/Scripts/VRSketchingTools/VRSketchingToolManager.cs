@@ -55,7 +55,9 @@ public class VRSketchingToolManager : MonoBehaviour
 
         foreach (GameObject VRSketchingTool in VRSketchingTools)
         {
-            VRSketchingTool.GetComponent<Renderer>().material.SetColor("_Color", VRSketchingToolColor);
+            Color VRSketchingToolColorTransparent = VRSketchingToolColor;
+            VRSketchingToolColorTransparent.a = 0.5f;
+            VRSketchingTool.GetComponent<Renderer>().material.SetColor("_Color", VRSketchingToolColorTransparent);
         }
     }
 
