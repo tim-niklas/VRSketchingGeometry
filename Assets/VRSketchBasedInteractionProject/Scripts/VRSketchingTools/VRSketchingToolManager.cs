@@ -12,11 +12,20 @@ public class VRSketchingToolManager : MonoBehaviour
     public SketchWorld SketchWorld; // SketchWorld of scene
     public DefaultReferences Defaults;
 
+
     public GameObject[] VRSketchingTools;
+    public GameObject VRSketchingToolBox;
+  
 
     public void Start()
     {
         // Create a SketchWorld, many commands require a SketchWorld to be present
+        SketchWorld = Instantiate(Defaults.SketchWorldPrefab).GetComponent<SketchWorld>();
+    }
+
+    public void DeleteAllSketches()
+    {
+        Destroy(SketchWorld);
         SketchWorld = Instantiate(Defaults.SketchWorldPrefab).GetComponent<SketchWorld>();
     }
 
@@ -41,12 +50,19 @@ public class VRSketchingToolManager : MonoBehaviour
     {
         SetToolActiveOrInactive(true, "VRDrawLinesTool", "VRDrawLinesAttachment");
         SetToolActiveOrInactive(false, "VRDrawRibbonsTool", "VRDrawRibbonsAttachment");
+  
     }
 
     public void SetVRDrawRibbonsActive()
     {
         SetToolActiveOrInactive(false, "VRDrawLinesTool", "VRDrawLinesAttachment");
         SetToolActiveOrInactive(true, "VRDrawRibbonsTool", "VRDrawRibbonsAttachment");
+ 
+    }
+
+    public void SetVRSketchingToolBoxActiveOrInactive(bool status)
+    {
+        VRSketchingToolBox.SetActive(status);
     }
 
     public void SetColorOfToolAttachment(string VRAttachmentTag)

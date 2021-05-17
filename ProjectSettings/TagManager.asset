@@ -14,6 +14,7 @@ TagManager:
   - VRDrawLinesAttachmentModel
   - VRRecognizerAttachmentModel
   - ColorCircle
+  - UICanvas
   layers:
   - Default
   - TransparentFX
