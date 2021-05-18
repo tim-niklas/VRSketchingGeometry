@@ -30,7 +30,7 @@ public class CircleColorPicker : MonoBehaviour
     public void Start()
     {
         // Set controller input listener
-        actionSphereColorPicker.AddOnStateDownListener(SelectColor, handType);
+        actionSphereColorPicker.AddOnStateUpListener(SelectColor, handType);
     }
 
     public void SelectColor(SteamVR_Action_Boolean fromAction, SteamVR_Input_Sources fromSource)

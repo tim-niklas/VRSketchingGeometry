@@ -132,6 +132,8 @@ public class VRSketchRecognizer : MonoBehaviour
 
             string fileName = Application.streamingAssetsPath + "/TrainingSet/" + newGestureName + DateTime.Now.ToFileTime().ToString() + ".xml";
             GestureIO.WriteGesture(pointArray, newGestureName, fileName);
+
+            lineRenderer.positionCount = 0;
         }
 
         else

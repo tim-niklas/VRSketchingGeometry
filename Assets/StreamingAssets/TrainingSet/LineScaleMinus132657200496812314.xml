@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Gesture Name = "LineScaleMinus">
+	<Stroke>
+		<Point X = "812,9891" Y = "1153,899" T = "0" Pressure = "0" />
+		<Point X = "857,3147" Y = "1157,078" T = "0" Pressure = "0" />
+		<Point X = "913,361" Y = "1160,564" T = "0" Pressure = "0" />
+		<Point X = "969,5717" Y = "1164,33" T = "0" Pressure = "0" />
+		<Point X = "1034,855" Y = "1166,517" T = "0" Pressure = "0" />
+		<Point X = "1110,292" Y = "1167,755" T = "0" Pressure = "0" />
+		<Point X = "1178,723" Y = "1166,852" T = "0" Pressure = "0" />
+		<Point X = "1249,239" Y = "1162,461" T = "0" Pressure = "0" />
+		<Point X = "1312,229" Y = "1156,625" T = "0" Pressure = "0" />
+		<Point X = "1362,37" Y = "1150,618" T = "0" Pressure = "0" />
+		<Point X = "1405,549" Y = "1143,716" T = "0" Pressure = "0" />
+		<Point X = "1432,208" Y = "1139,001" T = "0" Pressure = "0" />
+	</Stroke>
+</Gesture>

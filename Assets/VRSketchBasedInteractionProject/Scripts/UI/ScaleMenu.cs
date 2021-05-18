@@ -15,10 +15,14 @@ public class ScaleMenu : MonoBehaviour
     {
         ScaleSlider.value = ToolManager.GetScale();
     }
+    public void Update()
+    {
+        ScaleSlider.value = ToolManager.GetScale();
+    }
     public void ScaleChange()
     {
         float scale = ScaleSlider.value;
-        ScaleSliderText.SetText(scale.ToString("0:0.00"));
+        ScaleSliderText.SetText(scale.ToString("0.00"));
         ToolManager.SetScale(scale);
     }
 }
