@@ -7,7 +7,7 @@ public class VRSketchBasedCommander : MonoBehaviour
 {
     public CommandInvoker Invoker; // CommandeInkover responsbile for the whole scene
     public VRSketchingToolManager ToolManager;
-    public UICanvasActivation CanvasActivation;
+    public UICanvasActivation UIManager;
 
     public void Start()
     {
@@ -28,11 +28,11 @@ public class VRSketchBasedCommander : MonoBehaviour
                 Debug.Log("Undo");
                 break;
             case "ColorMenu":
-                CanvasActivation.SetColorMenuActiveOrInactive();
+                UIManager.SetColorMenuActiveOrInactive();
                 Debug.Log("ColorMenu");
                 break;
             case "ScaleMenu":
-                CanvasActivation.SetScaleMenuActiveOrInactive();
+                UIManager.SetScaleMenuActiveOrInactive();
                 Debug.Log("ScaleMenu");
                 break;
             case "VRDrawLines":
@@ -55,8 +55,9 @@ public class VRSketchBasedCommander : MonoBehaviour
                 ToolManager.DecreaseScale();
                 Debug.Log("LineScaleMinus");
                 break;
-            case "ControlCommandsDisplay":
-                Debug.Log("ControlCommandDisplay");
+            case "CommandsInformationDisplay":
+                UIManager.SetCommandsInformationDisplayActiveOrInactive();
+                Debug.Log("CommandsInformationDisplay");
                 break;
             default:
                 Debug.Log("No command found");

@@ -24,6 +24,9 @@ public class VRSketchingToolManager : MonoBehaviour
     public GameObject[] VRDrawRibbonsToolAttachment;
     public GameObject[] VRDrawRibbonsToolAttachmentModels;
 
+    public GameObject[] VRSketchRecognizerAttachments;
+    public GameObject[] VRSketchingToolAttachments;
+
 
     public void Start()
     {
@@ -63,12 +66,18 @@ public class VRSketchingToolManager : MonoBehaviour
         {
             gameObject.SetActive(status);
         }
+    }
 
+    public void SetVRSketchRecognizerAttachmentActiveOrInactive(bool status)
+    {
+        foreach (GameObject gameObject in VRSketchRecognizerAttachments)
+        {
+            gameObject.SetActive(status);
+        }
     }
 
     public void SetVRDrawLinesActive()
     {
-
         SetVRDrawRibbonsActiveOrInactive(false);
         SetVRDrawLinesActiveOrInactive(true);
     }
@@ -84,6 +93,33 @@ public class VRSketchingToolManager : MonoBehaviour
     {
         VRSketchingToolBox.SetActive(status);
     }
+
+    public void SetVRSketchRecognizerAttachmentActive()
+    {
+        SetVRSketchRecognizerAttachmentActiveOrInactive(true);
+
+        foreach (GameObject gameObject in VRSketchingToolAttachments)
+        {
+            gameObject.SetActive(false);
+        }
+
+        SetVRSketchingToolBoxActiveOrInactive(false);
+
+    }
+
+    public void SetVRSketchRecognizerAttachmentInActive()
+    {
+        SetVRSketchRecognizerAttachmentActiveOrInactive(false);
+     
+        foreach (GameObject gameObject in VRSketchingToolAttachments)
+        {
+            gameObject.SetActive(true);
+        }
+
+        SetVRSketchingToolBoxActiveOrInactive(true);
+
+    }
+
 
     public void SetColorOfToolAttachments()
     {
@@ -147,7 +183,7 @@ public class VRSketchingToolManager : MonoBehaviour
 
     public void IncreaseScale()
     {
-       
+
         if (VRSketchingToolScale <= 0.09f)
         {
             VRSketchingToolScale += 0.01f;

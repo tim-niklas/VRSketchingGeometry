@@ -33,6 +33,8 @@ public class VRSketchRecognizer : MonoBehaviour
     public bool creationMode = false; // Activate creation mode
     public string newGestureName; // Name of the new created gesture (sketch)
 
+    public VRSketchingToolManager ToolManager;
+
     // Event system for calling the VRSketchBasedCommander
     [System.Serializable]
     public class UnityEventSketchRecognized : UnityEvent<string, float> { }
@@ -90,6 +92,7 @@ public class VRSketchRecognizer : MonoBehaviour
     void StartMovement()
     {
         isMoving = true;
+        ToolManager.SetVRSketchRecognizerAttachmentActive();
 
         // Set list of position points
         positionsList.Clear();
@@ -109,6 +112,7 @@ public class VRSketchRecognizer : MonoBehaviour
     void EndMovement()
     {
         isMoving = false;
+        ToolManager.SetVRSketchRecognizerAttachmentInActive();
 
         // Creates the gesture (stetch) from the positionsList
         Point[] pointArray = new Point[positionsList.Count];
