@@ -5,10 +5,10 @@ using UnityEngine.UI;
 
 public class ButtonColorPicker : MonoBehaviour
 {
-    public Color ButtonColor;
-    public Image ColorDisplayImage;
+    public Color ButtonColor; // Select with color the button should set
 
-    public VRSketchingToolManager ToolManager;
+    public Image ColorDisplayImage; 
+    public VRSketchingToolManager ToolManager;  
 
     public void ChangeColor()
     {

@@ -44,16 +44,16 @@ public class VRSketchBasedCommander : MonoBehaviour
                 Debug.Log("VRDrawRibbons");
                 break;
             case "DeleteSketches":
-                ToolManager.DeleteAllSketches();
-                Debug.Log("DeleteSketches");
+                ToolManager.DeleteSketchWorld();
+                Debug.Log("DeleteSketchWorld");
                 break;
             case "LineScalePlus":
                 ToolManager.IncreaseScale();
-                Debug.Log("LineScalePlus");
+                Debug.Log("ScaleInscrease");
                 break;
             case "LineScaleMinus":
                 ToolManager.DecreaseScale();
-                Debug.Log("LineScaleMinus");
+                Debug.Log("ScaleDecrease");
                 break;
             case "CommandsInformationDisplay":
                 UIManager.SetCommandsInformationDisplayActiveOrInactive();

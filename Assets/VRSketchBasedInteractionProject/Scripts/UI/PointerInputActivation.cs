@@ -7,11 +7,12 @@ public class PointerInputActivation : MonoBehaviour
 
     public GameObject Pointer;
     public GameObject InputModule;
-    public GameObject RightHand;
+
+    public GameObject RightHand; 
     public VRSketchingToolManager ToolManager;
 
-    public bool PointerInputActive;
-    
+    bool PointerInputActive;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -26,13 +27,13 @@ public class PointerInputActivation : MonoBehaviour
         Ray ray = new Ray(RightHand.transform.position, RightHand.transform.forward);
         if (Physics.Raycast(ray, out hit))
         {
-             if (hit.transform.tag == "UICanvas")
+            if (hit.transform.tag == "UICanvas")
             {
                 Pointer.SetActive(true);
                 PointerInputActive = true;
                 InputModule.SetActive(true);
                 ToolManager.SetVRSketchingToolBoxActiveOrInactive(false);
-             
+
             }
         }
         else if (PointerInputActive)

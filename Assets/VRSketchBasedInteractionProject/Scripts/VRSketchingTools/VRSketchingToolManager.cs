@@ -12,7 +12,6 @@ public class VRSketchingToolManager : MonoBehaviour
     public SketchWorld SketchWorld; // SketchWorld of scene
     public DefaultReferences Defaults;
 
-
     public GameObject[] VRSketchingTools;
     public GameObject VRSketchingToolBox;
 
@@ -34,7 +33,7 @@ public class VRSketchingToolManager : MonoBehaviour
         SketchWorld = Instantiate(Defaults.SketchWorldPrefab).GetComponent<SketchWorld>();
     }
 
-    public void DeleteAllSketches()
+    public void DeleteSketchWorld()
     {
         foreach (Transform child in SketchWorld.transform)
         {
@@ -104,7 +103,6 @@ public class VRSketchingToolManager : MonoBehaviour
         }
 
         SetVRSketchingToolBoxActiveOrInactive(false);
-
     }
 
     public void SetVRSketchRecognizerAttachmentInActive()
@@ -117,7 +115,6 @@ public class VRSketchingToolManager : MonoBehaviour
         }
 
         SetVRSketchingToolBoxActiveOrInactive(true);
-
     }
 
 
@@ -155,7 +152,6 @@ public class VRSketchingToolManager : MonoBehaviour
     {
         SetScaleOfToolAttachments();
         SetColorOfToolAttachments();
-
     }
 
     public void SetAllToolsAttachmentApperances()
@@ -183,7 +179,6 @@ public class VRSketchingToolManager : MonoBehaviour
 
     public void IncreaseScale()
     {
-
         if (VRSketchingToolScale <= 0.09f)
         {
             VRSketchingToolScale += 0.01f;

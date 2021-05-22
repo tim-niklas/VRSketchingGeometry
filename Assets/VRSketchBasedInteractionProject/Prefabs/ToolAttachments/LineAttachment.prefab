@@ -43,7 +43,7 @@ GameObject:
   - component: {fileID: 4216063906941734849}
   - component: {fileID: 3719708618921517118}
   m_Layer: 0
-  m_Name: Sphere
+  m_Name: LineAttachmentModel
   m_TagString: VRDrawLinesAttachmentModel
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

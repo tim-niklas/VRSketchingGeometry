@@ -4,6 +4,9 @@ using UnityEngine;
 using UnityEngine.UI;
 using Valve.VR;
 
+/// <summary>
+/// Modified script of the VRColorPicker template.
+/// </summary>
 public class CircleColorPicker : MonoBehaviour
 {
     public GameObject colorPanel;
@@ -12,9 +15,11 @@ public class CircleColorPicker : MonoBehaviour
 
     public SteamVR_Input_Sources handType; // Left or right hand
     public SteamVR_Action_Boolean actionSphereColorPicker; // Action set (select key input of controller)
-    public VRSketchingToolManager ToolManager;
-    Color currentColor;
+
     public Image ColorDisplayImage;
+    public VRSketchingToolManager ToolManager;
+
+    Color currentColor;
     bool pickerIsInCircle = false;
 
     [Header("Config")]
@@ -40,6 +45,7 @@ public class CircleColorPicker : MonoBehaviour
             currentColor = getImageColor(thumb.localPosition);
             currentColor.a = 1f;
             ToolManager.SetColor(currentColor);
+
             setColorDisplayImage();
         }
     }

@@ -34,7 +34,6 @@ public class UICanvasActivation : MonoBehaviour
             ToolBoxMenu.SetActive(false);
             HelpMenu.SetActive(false);
         }
-
     }
 
     public void SetColorMenuActiveOrInactive()
@@ -81,13 +80,17 @@ public class UICanvasActivation : MonoBehaviour
         {
             CommandsInformationDisplay.SetActive(false);
             HelpMenu.SetActive(false);
+            SetUICanvasActiveOrInactive(false);
         }
         else
         {
             CommandsInformationDisplay.SetActive(true);
             HelpMenu.SetActive(true);
+            SetUICanvasActiveOrInactive(true);
+
+            ColorMenu.SetActive(false);
+            ToolBoxMenu.SetActive(false);
+            ScaleMenu.SetActive(false);
         }
     }
-
-
 }

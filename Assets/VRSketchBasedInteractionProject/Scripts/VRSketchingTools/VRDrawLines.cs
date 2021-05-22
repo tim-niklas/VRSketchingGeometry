@@ -98,7 +98,6 @@ public class VRDrawLines : MonoBehaviour
 
     void EndDrawLine()
     {
-
         Commander.Invoker.ExecuteCommand(new AddObjectToSketchWorldRootCommand(currentLineSketchObject, ToolManager.SketchWorld)); // Add lineSketchObject to SketchWorld
         isMoving = false;
     }

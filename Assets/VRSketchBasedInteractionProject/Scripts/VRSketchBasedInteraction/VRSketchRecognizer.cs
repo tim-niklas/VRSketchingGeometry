@@ -18,10 +18,9 @@ public class VRSketchRecognizer : MonoBehaviour
     private bool isMoving = false; // If controller is moving
 
     // Display of gesture (sketch) settings
-    public GameObject debugPrefab; // Debug prefab model 
     private LineRenderer lineRenderer; // lineRenderer draw lines accrding to the given positions
     public Gradient lineRendererGradientNeutral; // Color gradient of gesture (sketch) line
-    public Gradient lineRendererGradientFalse; // Color gradient of gesture (sketch) line if there is no correct gesture is recognized
+    public Gradient lineRendererGradientFalse; // Color gradient of gesture (sketch) line if there is no correct gesture recognized
 
     // Recognition settings
     private List<Gesture> trainingSet = new List<Gesture>(); // Training set of gestures
@@ -103,10 +102,6 @@ public class VRSketchRecognizer : MonoBehaviour
         lineRenderer.positionCount++;
         lineRenderer.SetPosition(0, movementSource.position);
         lineRenderer.colorGradient = lineRendererGradientNeutral;
-
-        // if (debugPrefab)
-        //     Destroy(Instantiate(debugPrefab, movementSource.position, Quaternion.identity), 3);
-
     }
 
     void EndMovement()
@@ -168,9 +163,6 @@ public class VRSketchRecognizer : MonoBehaviour
 
             lineRenderer.positionCount++;
             lineRenderer.SetPosition(lineRenderer.positionCount - 1, movementSource.position);
-
-            //  if (debugPrefab)
-            //      Destroy(Instantiate(debugPrefab, movementSource.position, Quaternion.identity), 3);
         }
     }
 

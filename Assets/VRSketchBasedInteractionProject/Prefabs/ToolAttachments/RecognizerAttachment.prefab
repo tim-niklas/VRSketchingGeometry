@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 6270957195622019900}
   - component: {fileID: 8019357566830505002}
   m_Layer: 0
-  m_Name: 'Cube '
+  m_Name: RecognizerAttachmentModel
   m_TagString: VRRecognizerAttachmentModel
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -123,7 +123,7 @@ GameObject:
   - component: {fileID: 2333098544625727376}
   - component: {fileID: 810258655184450799}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: RecognizerAttachmentModel
   m_TagString: VRRecognizerAttachmentModel
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
