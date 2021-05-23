@@ -64,4 +64,14 @@ public class VRSketchBasedCommander : MonoBehaviour
                 break;
         }
     }
+
+    public void UndoSketch()
+    {
+        Invoker.Undo();
+    }
+
+    public void RedoSketch()
+    {
+        Invoker.Redo();
+    }
 }
