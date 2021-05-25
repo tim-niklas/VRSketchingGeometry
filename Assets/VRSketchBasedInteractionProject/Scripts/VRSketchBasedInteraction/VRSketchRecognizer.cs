@@ -43,8 +43,8 @@ public class VRSketchRecognizer : MonoBehaviour
     void Start()
     {
         // Set controller input listener
-        actionRecognizeSketch.AddOnStateDownListener(GripButtonDown, handType);
-        actionRecognizeSketch.AddOnStateUpListener(GripButtonUp, handType);
+        actionRecognizeSketch.AddOnStateDownListener(SketchRecognizerButtonDown, handType);
+        actionRecognizeSketch.AddOnStateUpListener(SketchRecognizerButtonUp, handType);
 
         // Reading gesture training set
         string[] gesturesFiles = Directory.GetFiles(Application.streamingAssetsPath + "/TrainingSet", "*.xml");
@@ -57,13 +57,13 @@ public class VRSketchRecognizer : MonoBehaviour
         lineRenderer = gameObject.GetComponent<LineRenderer>();
     }
 
-    // If controller grip button is pressed
-    public void GripButtonDown(SteamVR_Action_Boolean fromAction, SteamVR_Input_Sources fromSource)
+    // If controller button is pressed
+    public void SketchRecognizerButtonDown(SteamVR_Action_Boolean fromAction, SteamVR_Input_Sources fromSource)
     {
         isPressed = true;
     }
 
-    public void GripButtonUp(SteamVR_Action_Boolean fromAction, SteamVR_Input_Sources fromSource)
+    public void SketchRecognizerButtonUp(SteamVR_Action_Boolean fromAction, SteamVR_Input_Sources fromSource)
     {
         isPressed = false;
     }

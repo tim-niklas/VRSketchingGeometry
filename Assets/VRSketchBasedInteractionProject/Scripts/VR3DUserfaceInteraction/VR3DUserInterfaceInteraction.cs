@@ -10,8 +10,8 @@ public class VR3DUserInterfaceInteraction : MonoBehaviour
 
     public GameObject UICanvas;
 
-    // If controller grip button is pressed
-    public void GripButtonUp(SteamVR_Action_Boolean fromAction, SteamVR_Input_Sources fromSource)
+    // If controller button is pressed
+    public void Open3DUserInterfaceButtonUp(SteamVR_Action_Boolean fromAction, SteamVR_Input_Sources fromSource)
     {
         if (UICanvas.activeSelf)
         {
@@ -27,6 +27,6 @@ public class VR3DUserInterfaceInteraction : MonoBehaviour
     void Start()
     {
         // Set controller input listener
-        action3DUserInterface.AddOnStateUpListener(GripButtonUp, handType);
+        action3DUserInterface.AddOnStateUpListener(Open3DUserInterfaceButtonUp, handType);
     }
 }

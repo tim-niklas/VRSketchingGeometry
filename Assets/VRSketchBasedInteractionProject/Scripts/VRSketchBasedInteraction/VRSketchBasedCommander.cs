@@ -2,12 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 using VRSketchingGeometry.Commands;
+using TMPro;
 
 public class VRSketchBasedCommander : MonoBehaviour
 {
     public CommandInvoker Invoker; // CommandeInkover responsbile for the whole scene
     public VRSketchingToolManager ToolManager;
     public UICanvasActivation UIManager;
+
+    public TMP_Text sketchTextMesh;
+    public GameObject sketchTextCanvas;
 
     public void Start()
     {
@@ -21,48 +25,66 @@ public class VRSketchBasedCommander : MonoBehaviour
         {
             case "Redo":
                 Invoker.Redo();
-                Debug.Log("Redo");
+                SetTextController("REDO");
+                Debug.Log("REDO");
                 break;
             case "Undo":
                 Invoker.Undo();
-                Debug.Log("Undo");
+                Debug.Log("UNDO");
+                SetTextController("UNDO");
                 break;
             case "ColorMenu":
                 UIManager.SetColorMenuActiveOrInactive();
-                Debug.Log("ColorMenu");
+                Debug.Log("COLOR MENU");
+                SetTextController("COLOR MENU");
                 break;
             case "ScaleMenu":
                 UIManager.SetScaleMenuActiveOrInactive();
-                Debug.Log("ScaleMenu");
+                Debug.Log("SCALE MENU");
+                SetTextController("SCALE MENU");
                 break;
-            case "VRDrawLines":
+            case "ToolboxMenu":
+                UIManager.SetToolBoxMenuActiveOrInactive();
+                Debug.Log("TOOLBOX MENU");
+                SetTextController("TOOLBOX MENU");
+                break;
+            case "LineTool":
                 ToolManager.SetVRDrawLinesActive();
-                Debug.Log("VRDrawLines");
+                Debug.Log("LINE TOOL");
+                SetTextController("LINE TOOL");
                 break;
-            case "VRDrawRibbons":
+            case "RibbonTool":
                 ToolManager.SetVRDrawRibbonsActive();
-                Debug.Log("VRDrawRibbons");
+                Debug.Log("RIBBON TOOL");
+                SetTextController("RIBBON TOOL");
                 break;
-            case "DeleteSketches":
+            case "DeleteSketch":
                 ToolManager.DeleteSketchWorld();
-                Debug.Log("DeleteSketchWorld");
+                Debug.Log("DELETE SKETCH");
+                SetTextController("DELETE SKETCH");
                 break;
-            case "LineScalePlus":
+            case "ScaleIncrease":
                 ToolManager.IncreaseScale();
-                Debug.Log("ScaleInscrease");
+                SetTextController("SCALE +");
+                Debug.Log("SCALE +");
                 break;
-            case "LineScaleMinus":
+            case "ScaleDecrease":
                 ToolManager.DecreaseScale();
-                Debug.Log("ScaleDecrease");
+                SetTextController("SCALE -");
+                Debug.Log("SCALE -");
                 break;
-            case "CommandsInformationDisplay":
+            case "HelpMenu":
                 UIManager.SetCommandsInformationDisplayActiveOrInactive();
-                Debug.Log("CommandsInformationDisplay");
+                Debug.Log("HELP MENU");
+                SetTextController("HELP MENU");
                 break;
             default:
-                Debug.Log("No command found");
+                Debug.Log("NO COMMAND");
+                SetTextController("NO COMMAND");
                 break;
         }
+
+        StartCoroutine(TextActivation());
     }
 
     public void UndoSketch()
@@ -73,5 +95,16 @@ public class VRSketchBasedCommander : MonoBehaviour
     public void RedoSketch()
     {
         Invoker.Redo();
+    }
+
+    public void SetTextController(string sketchName)
+    {
+        sketchTextMesh.text = sketchName;
+    }
+    private IEnumerator TextActivation()
+    {
+        sketchTextCanvas.SetActive(true);
+        yield return new WaitForSeconds(0.75f);
+        sketchTextCanvas.SetActive(false);
     }
 }
