@@ -4,11 +4,10 @@ using UnityEngine;
 
 public class PointerInputActivation : MonoBehaviour
 {
-
     public GameObject Pointer;
     public GameObject InputModule;
 
-    public GameObject RightHand; 
+    public GameObject RightHand;
     public VRSketchingToolManager ToolManager;
 
     bool PointerInputActive;

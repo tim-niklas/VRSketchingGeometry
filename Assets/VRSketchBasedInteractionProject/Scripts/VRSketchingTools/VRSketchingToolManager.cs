@@ -108,7 +108,7 @@ public class VRSketchingToolManager : MonoBehaviour
     public void SetVRSketchRecognizerAttachmentInActive()
     {
         SetVRSketchRecognizerAttachmentActiveOrInactive(false);
-     
+
         foreach (GameObject gameObject in VRSketchingToolAttachments)
         {
             gameObject.SetActive(true);

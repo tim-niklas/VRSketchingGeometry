@@ -93,4 +93,14 @@ public class UICanvasActivation : MonoBehaviour
             ScaleMenu.SetActive(false);
         }
     }
+
+    public void CloseUI()
+    {
+        SetUICanvasActiveOrInactive(false);
+        CommandsInformationDisplay.SetActive(false);
+        HelpMenu.SetActive(false);
+        ColorMenu.SetActive(false);
+        ToolBoxMenu.SetActive(false);
+        ScaleMenu.SetActive(false);
+    }
 }

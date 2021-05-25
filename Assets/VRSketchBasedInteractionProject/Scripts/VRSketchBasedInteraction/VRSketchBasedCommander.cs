@@ -78,6 +78,11 @@ public class VRSketchBasedCommander : MonoBehaviour
                 Debug.Log("HELP MENU");
                 SetTextController("HELP MENU");
                 break;
+            case "CloseUI":
+                UIManager.CloseUI();
+                Debug.Log("CLOSE UI");
+                SetTextController("CLOSE UI");
+                break;
             default:
                 Debug.Log("NO COMMAND");
                 SetTextController("NO COMMAND");
@@ -104,7 +109,7 @@ public class VRSketchBasedCommander : MonoBehaviour
     private IEnumerator TextActivation()
     {
         sketchTextCanvas.SetActive(true);
-        yield return new WaitForSeconds(0.75f);
+        yield return new WaitForSeconds(0.9f);
         sketchTextCanvas.SetActive(false);
     }
 }

@@ -7,8 +7,8 @@ public class ButtonColorPicker : MonoBehaviour
 {
     public Color ButtonColor; // Select with color the button should set
 
-    public Image ColorDisplayImage; 
-    public VRSketchingToolManager ToolManager;  
+    public Image ColorDisplayImage;
+    public VRSketchingToolManager ToolManager;
 
     public void ChangeColor()
     {
