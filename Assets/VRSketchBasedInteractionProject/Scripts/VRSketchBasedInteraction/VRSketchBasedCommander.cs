@@ -12,6 +12,7 @@ public class VRSketchBasedCommander : MonoBehaviour
 
     public TMP_Text sketchTextMesh;
     public GameObject sketchTextCanvas;
+    float textTime;
 
     public void Start()
     {
@@ -88,7 +89,7 @@ public class VRSketchBasedCommander : MonoBehaviour
                 SetTextController("NO COMMAND");
                 break;
         }
-
+        textTime = 0;
         StartCoroutine(TextActivation());
     }
 
@@ -106,10 +107,17 @@ public class VRSketchBasedCommander : MonoBehaviour
     {
         sketchTextMesh.text = sketchName;
     }
+
     private IEnumerator TextActivation()
     {
+        textTime = 0;
         sketchTextCanvas.SetActive(true);
-        yield return new WaitForSeconds(0.9f);
+
+        while (textTime < 2)
+        {
+            yield return null;
+            textTime += Time.deltaTime;
+        }
         sketchTextCanvas.SetActive(false);
     }
 }
