@@ -1,0 +1,14 @@
+# 
+# Wavefront material file
+# Created with Kaydara FBX
+# 
+
+newmtl Vive_Controllers
+map_Kd onepointfive_texture.png
+map_Bump onepointfive_normal.png
+Ka 0.588235 0.588235 0.588235
+Kd 0.588235 0.588235 0.588235
+Ks 0.000000 0.000000 0.000000
+illum 2
+Ns 2.000000
+Tr 1.000000
