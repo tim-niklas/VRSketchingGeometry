@@ -14,6 +14,9 @@ public class VRSketchBasedCommander : MonoBehaviour
     public GameObject sketchTextCanvas;
     float textTime;
 
+    public float sketchCounter = 0;
+    public float sketchRecognizedFalseCounter = 0;
+
     public void Start()
     {
         Invoker = new CommandInvoker(); // Initialize CommandInvoker
