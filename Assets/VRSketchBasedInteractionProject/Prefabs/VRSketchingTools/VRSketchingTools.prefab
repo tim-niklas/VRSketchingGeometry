@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &3964303570692660240
+--- !u!1 &8981830072631987338
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,39 +8,7 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 3964303570692660255}
-  m_Layer: 0
-  m_Name: VRSketchingToolBox
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &3964303570692660255
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3964303570692660240}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 3964303571021210901}
-  - {fileID: 3964303572635521511}
-  m_Father: {fileID: 3964303572732444011}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &3964303571021210902
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 3964303571021210901}
+  - component: {fileID: 8981830072631987337}
   m_Layer: 0
   m_Name: VRDrawLines
   m_TagString: VRDrawLinesTool
@@ -48,23 +16,23 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
---- !u!4 &3964303571021210901
+--- !u!4 &8981830072631987337
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3964303571021210902}
+  m_GameObject: {fileID: 8981830072631987338}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 3964303571360420260}
-  - {fileID: 3964303571903014539}
-  m_Father: {fileID: 3964303570692660255}
+  - {fileID: 8981830073643350072}
+  - {fileID: 8981830074201919255}
+  m_Father: {fileID: 8981830072971064707}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &3964303571181006609
+--- !u!1 &8981830072807769741
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -72,8 +40,8 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 3964303571181006608}
-  - component: {fileID: 3964303571181006623}
+  - component: {fileID: 8981830072807769740}
+  - component: {fileID: 8981830072807769731}
   m_Layer: 0
   m_Name: VRDrawRibbonsLeftHand
   m_TagString: Untagged
@@ -81,27 +49,27 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &3964303571181006608
+--- !u!4 &8981830072807769740
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3964303571181006609}
+  m_GameObject: {fileID: 8981830072807769741}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 3964303572635521511}
+  m_Father: {fileID: 8981830074247297147}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3964303571181006623
+--- !u!114 &8981830072807769731
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3964303571181006609}
+  m_GameObject: {fileID: 8981830072807769741}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 163bc2595490a4d43994e428cacddc90, type: 3}
@@ -112,12 +80,12 @@ MonoBehaviour:
     actionPath: /actions/default/in/InteractUI
     needsReinit: 0
   movementSource: {fileID: 0}
-  newPositionTresholdDistance: 0.025
+  newPositionTresholdDistance: 0.01
   Defaults: {fileID: 11400000, guid: 80ac1fe1704d8434eac74bc2c69b9794, type: 2}
   listOfRibbonSketchObjects: []
-  ToolManager: {fileID: 3964303571672392616}
+  ToolManager: {fileID: 8981830073434163764}
   Commander: {fileID: 0}
---- !u!1 &3964303571360420261
+--- !u!1 &8981830072971064716
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -125,52 +93,31 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 3964303571360420260}
-  - component: {fileID: 3964303571360420259}
+  - component: {fileID: 8981830072971064707}
   m_Layer: 0
-  m_Name: VRDrawLinesRightHand
+  m_Name: VRSketchingToolBox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &3964303571360420260
+--- !u!4 &8981830072971064707
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3964303571360420261}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_GameObject: {fileID: 8981830072971064716}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 3964303571021210901}
-  m_RootOrder: 0
+  m_Children:
+  - {fileID: 8981830072631987337}
+  - {fileID: 8981830074247297147}
+  m_Father: {fileID: 8981830074477696247}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3964303571360420259
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3964303571360420261}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 22432367fdd93cb4ebe2bbe39c19bb24, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  handType: 2
-  actionDrawLines:
-    actionPath: /actions/default/in/InteractUI
-    needsReinit: 0
-  movementSource: {fileID: 0}
-  newPositionTresholdDistance: 0.05
-  Defaults: {fileID: 11400000, guid: 80ac1fe1704d8434eac74bc2c69b9794, type: 2}
-  listOfLineSketchObjects: []
-  ToolManager: {fileID: 3964303571672392616}
-  Commander: {fileID: 0}
---- !u!1 &3964303571672392618
+--- !u!1 &8981830073434163766
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -178,8 +125,8 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 3964303571672392617}
-  - component: {fileID: 3964303571672392616}
+  - component: {fileID: 8981830073434163765}
+  - component: {fileID: 8981830073434163764}
   m_Layer: 0
   m_Name: VRSketchingToolsManager
   m_TagString: Untagged
@@ -187,27 +134,27 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &3964303571672392617
+--- !u!4 &8981830073434163765
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3964303571672392618}
+  m_GameObject: {fileID: 8981830073434163766}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 3964303572732444011}
+  m_Father: {fileID: 8981830074477696247}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3964303571672392616
+--- !u!114 &8981830073434163764
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3964303571672392618}
+  m_GameObject: {fileID: 8981830073434163766}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5f8457581a3a31048b53a430f42fbafc, type: 3}
@@ -218,9 +165,9 @@ MonoBehaviour:
   SketchWorld: {fileID: 0}
   Defaults: {fileID: 11400000, guid: 80ac1fe1704d8434eac74bc2c69b9794, type: 2}
   VRSketchingTools: []
-  VRSketchingToolBox: {fileID: 3964303570692660240}
+  VRSketchingToolBox: {fileID: 8981830072971064716}
   VRDrawLinesTool:
-  - {fileID: 3964303571021210902}
+  - {fileID: 8981830072631987338}
   VRDrawLinesToolAttachment:
   - {fileID: 0}
   - {fileID: 0}
@@ -228,7 +175,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   VRDrawRibbonsTool:
-  - {fileID: 3964303572635521048}
+  - {fileID: 8981830074247297412}
   VRDrawRibbonsToolAttachment:
   - {fileID: 0}
   - {fileID: 0}
@@ -243,7 +190,7 @@ MonoBehaviour:
   VRSketchingToolAttachments:
   - {fileID: 0}
   - {fileID: 0}
---- !u!1 &3964303571903014540
+--- !u!1 &8981830073643350073
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -251,8 +198,61 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 3964303571903014539}
-  - component: {fileID: 3964303571903014538}
+  - component: {fileID: 8981830073643350072}
+  - component: {fileID: 8981830073643350079}
+  m_Layer: 0
+  m_Name: VRDrawLinesRightHand
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8981830073643350072
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8981830073643350073}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 8981830072631987337}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8981830073643350079
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8981830073643350073}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22432367fdd93cb4ebe2bbe39c19bb24, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  handType: 2
+  actionDrawLines:
+    actionPath: /actions/default/in/InteractUI
+    needsReinit: 0
+  movementSource: {fileID: 0}
+  newPositionTresholdDistance: 0.02
+  Defaults: {fileID: 11400000, guid: 80ac1fe1704d8434eac74bc2c69b9794, type: 2}
+  listOfLineSketchObjects: []
+  ToolManager: {fileID: 8981830073434163764}
+  Commander: {fileID: 0}
+--- !u!1 &8981830074201919248
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8981830074201919255}
+  - component: {fileID: 8981830074201919254}
   m_Layer: 0
   m_Name: VRDrawLinesLeftHand
   m_TagString: Untagged
@@ -260,27 +260,27 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &3964303571903014539
+--- !u!4 &8981830074201919255
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3964303571903014540}
+  m_GameObject: {fileID: 8981830074201919248}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 3964303571021210901}
+  m_Father: {fileID: 8981830072631987337}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3964303571903014538
+--- !u!114 &8981830074201919254
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3964303571903014540}
+  m_GameObject: {fileID: 8981830074201919248}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 22432367fdd93cb4ebe2bbe39c19bb24, type: 3}
@@ -291,12 +291,12 @@ MonoBehaviour:
     actionPath: /actions/default/in/InteractUI
     needsReinit: 0
   movementSource: {fileID: 0}
-  newPositionTresholdDistance: 0.05
+  newPositionTresholdDistance: 0.02
   Defaults: {fileID: 11400000, guid: 80ac1fe1704d8434eac74bc2c69b9794, type: 2}
   listOfLineSketchObjects: []
-  ToolManager: {fileID: 3964303571672392616}
+  ToolManager: {fileID: 8981830073434163764}
   Commander: {fileID: 0}
---- !u!1 &3964303572541650188
+--- !u!1 &8981830074247297412
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -304,8 +304,72 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 3964303572541650187}
-  - component: {fileID: 3964303572541650186}
+  - component: {fileID: 8981830074247297147}
+  m_Layer: 0
+  m_Name: VRDrawRibbons
+  m_TagString: VRDrawRibbonsTool
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8981830074247297147
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8981830074247297412}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 8981830074701880471}
+  - {fileID: 8981830072807769740}
+  m_Father: {fileID: 8981830072971064707}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &8981830074477696240
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8981830074477696247}
+  m_Layer: 0
+  m_Name: VRSketchingTools 1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8981830074477696247
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8981830074477696240}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 8981830073434163765}
+  - {fileID: 8981830072971064707}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &8981830074701880464
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8981830074701880471}
+  - component: {fileID: 8981830074701880470}
   m_Layer: 0
   m_Name: VRDrawRibbonsRightHand
   m_TagString: Untagged
@@ -313,27 +377,27 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &3964303572541650187
+--- !u!4 &8981830074701880471
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3964303572541650188}
+  m_GameObject: {fileID: 8981830074701880464}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 3964303572635521511}
+  m_Father: {fileID: 8981830074247297147}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3964303572541650186
+--- !u!114 &8981830074701880470
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3964303572541650188}
+  m_GameObject: {fileID: 8981830074701880464}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 163bc2595490a4d43994e428cacddc90, type: 3}
@@ -344,72 +408,8 @@ MonoBehaviour:
     actionPath: /actions/default/in/InteractUI
     needsReinit: 0
   movementSource: {fileID: 0}
-  newPositionTresholdDistance: 0.025
+  newPositionTresholdDistance: 0.01
   Defaults: {fileID: 11400000, guid: 80ac1fe1704d8434eac74bc2c69b9794, type: 2}
   listOfRibbonSketchObjects: []
-  ToolManager: {fileID: 3964303571672392616}
+  ToolManager: {fileID: 8981830073434163764}
   Commander: {fileID: 0}
---- !u!1 &3964303572635521048
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 3964303572635521511}
-  m_Layer: 0
-  m_Name: VRDrawRibbons
-  m_TagString: VRDrawRibbonsTool
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &3964303572635521511
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3964303572635521048}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 3964303572541650187}
-  - {fileID: 3964303571181006608}
-  m_Father: {fileID: 3964303570692660255}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &3964303572732444012
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 3964303572732444011}
-  m_Layer: 0
-  m_Name: VRSketchingTools
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &3964303572732444011
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3964303572732444012}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 3964303571672392617}
-  - {fileID: 3964303570692660255}
-  m_Father: {fileID: 0}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

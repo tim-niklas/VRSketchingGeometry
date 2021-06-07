@@ -64,7 +64,7 @@ namespace VRSketchingGeometry.SketchObjectManagement
             meshCollider = GetComponent<MeshCollider>();
 
             SplineMesh = this.MakeSplineMesh(InterpolationSteps, Vector3.one * lineDiameter);
-            LinearSplineMesh = new SplineMesh(new LinearInterpolationSpline(), Vector3.one * lineDiameter);
+            LinearSplineMesh = new SplineMesh(new LinearInterpolationSpline(), Vector3.one * lineDiameter, 6); // CODE CHANGE for SketchBasedInteractionProject (set vertices)
 
             meshCollider.sharedMesh = meshFilter.sharedMesh;
             setUpOriginalMaterialAndMeshRenderer();
@@ -168,7 +168,7 @@ namespace VRSketchingGeometry.SketchObjectManagement
             this.InterpolationSteps = steps;
             List<Vector3> controlPoints = this.GetControlPoints();
             this.SplineMesh.GetCrossSectionShape(out List<Vector3> CurrentCrossSectionShape, out List<Vector3> CurrentCrossSectionNormals);
-            //SplineMesh = new SplineMesh(new KochanekBartelsSpline(steps), this.lineDiameter * Vector3.one);
+            // SplineMesh = new SplineMesh(new KochanekBartelsSpline(steps), this.lineDiameter * Vector3.one);
             SplineMesh = this.MakeSplineMesh(steps, this.lineDiameter * Vector3.one);
             this.SetLineCrossSection(CurrentCrossSectionShape, CurrentCrossSectionNormals, this.lineDiameter);
             if (controlPoints.Count != 0) {
@@ -351,7 +351,7 @@ namespace VRSketchingGeometry.SketchObjectManagement
         /// <param name="lineDiameter"></param>
         /// <returns></returns>
         protected virtual SplineMesh MakeSplineMesh(int interpolationSteps, Vector3 lineDiameter) {
-            return new SplineMesh(new KochanekBartelsSpline(interpolationSteps), lineDiameter, 6); // CODE CHANGE for SketchBasedInteractionScene (set vertices)
+            return new SplineMesh(new KochanekBartelsSpline(interpolationSteps), lineDiameter, 6); // CODE CHANGE for SketchBasedInteractionProject (set vertices)
         }
 
         public Brush GetBrush() {
