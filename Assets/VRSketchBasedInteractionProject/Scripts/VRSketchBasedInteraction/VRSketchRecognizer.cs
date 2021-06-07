@@ -33,6 +33,7 @@ public class VRSketchRecognizer : MonoBehaviour
     public string newGestureName; // Name of the new created gesture (sketch)
 
     public VRSketchingToolManager ToolManager;
+    public VRSketchBasedCommander Commander;
 
     // Event system for calling the VRSketchBasedCommander
     [System.Serializable]
@@ -137,6 +138,8 @@ public class VRSketchRecognizer : MonoBehaviour
 
         else
         {
+            Commander.sketchCounter++;
+            Debug.Log(Commander.sketchCounter);
             Result result = PointCloudRecognizer.Classify(newGesture, trainingSet.ToArray());
 
             Debug.Log(" GestureClass " + result.GestureClass + " GestureScore " + result.Score);
@@ -148,6 +151,8 @@ public class VRSketchRecognizer : MonoBehaviour
             }
             else
             {
+                Commander.sketchRecognizedFalseCounter++;
+                Debug.Log(Commander.sketchRecognizedFalseCounter);
                 StartCoroutine(FalseRecognized());
             }
         }

@@ -1,0 +1,2 @@
+To use the HTC VIVE controller with out the ring, replace the body in this folder:
+Steam\steamapps\common\SteamVR\resources\rendermodels\vr_controller_vive_1_5
