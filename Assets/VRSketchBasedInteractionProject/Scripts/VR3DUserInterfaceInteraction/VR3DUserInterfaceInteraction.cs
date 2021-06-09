@@ -5,11 +5,11 @@ using Valve.VR;
 
 public class VR3DUserInterfaceInteraction : MonoBehaviour
 {
-    public SteamVR_Input_Sources handType; // Left or right hand
+    public SteamVR_Input_Sources handType; // all
     public SteamVR_Action_Boolean action3DUserInterface; // Action set (select key input of controller)
 
     public GameObject UICanvas;
-    public VRSketchingToolManager ToolManager;
+
 
     // If controller button is pressed
     public void Open3DUserInterfaceButtonUp(SteamVR_Action_Boolean fromAction, SteamVR_Input_Sources fromSource)
@@ -17,12 +17,10 @@ public class VR3DUserInterfaceInteraction : MonoBehaviour
         if (UICanvas.activeSelf)
         {
             UICanvas.SetActive(false);
-            ToolManager.SetVRSketchingToolBoxActiveOrInactive(true);
         }
         else
         {
             UICanvas.SetActive(true);
-            ToolManager.SetVRSketchingToolBoxActiveOrInactive(true);
         }
     }
 
