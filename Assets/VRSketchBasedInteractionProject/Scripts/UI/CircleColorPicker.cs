@@ -61,11 +61,16 @@ public class CircleColorPicker : MonoBehaviour
                 pickerIsInCircle = true;
                 SetThumbPosition(hit.point);
             }
+            else
+            {
+                pickerIsInCircle = false;
+            }
         }
         else
         {
             pickerIsInCircle = false;
         }
+        
     }
 
     private void SetThumbPosition(Vector3 point)
