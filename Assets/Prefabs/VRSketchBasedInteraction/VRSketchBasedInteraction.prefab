@@ -46,10 +46,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   handType: 1
   actionRecognizeSketch:
-    actionPath: /actions/default/in/GrabGrip
+    actionPath: /actions/default/in/Teleport
     needsReinit: 0
   movementSource: {fileID: 0}
-  debugPrefab: {fileID: 0}
   lineRendererGradientNeutral:
     serializedVersion: 2
     key0: {r: 0.43867922, g: 0.9728139, b: 1, a: 1}
@@ -113,6 +112,7 @@ MonoBehaviour:
   creationMode: 0
   newGestureName: 
   ToolManager: {fileID: 0}
+  Commander: {fileID: 0}
   OnRecognized:
     m_PersistentCalls:
       m_Calls:
@@ -450,6 +450,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ToolManager: {fileID: 0}
   UIManager: {fileID: 0}
+  sketchTextMesh: {fileID: 0}
+  sketchTextCanvas: {fileID: 0}
+  sketchCounter: 0
+  sketchRecognizedFalseCounter: 0
 --- !u!1 &8657247539330186178
 GameObject:
   m_ObjectHideFlags: 0
@@ -496,10 +500,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   handType: 2
   actionRecognizeSketch:
-    actionPath: /actions/default/in/GrabGrip
+    actionPath: /actions/default/in/Teleport
     needsReinit: 0
   movementSource: {fileID: 0}
-  debugPrefab: {fileID: 0}
   lineRendererGradientNeutral:
     serializedVersion: 2
     key0: {r: 0.43867922, g: 0.9728139, b: 1, a: 1}
@@ -563,6 +566,7 @@ MonoBehaviour:
   creationMode: 0
   newGestureName: 
   ToolManager: {fileID: 0}
+  Commander: {fileID: 0}
   OnRecognized:
     m_PersistentCalls:
       m_Calls:
